@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git 'https://github.com/yourusername/your-repo.git' // Replace with your repository URL
+                git 'https://github.com/Harsh-raj011/ecommerce-website.git' // Replace with your repository URL
             }
         }
 
