@@ -47,14 +47,14 @@ pipeline {
             steps {
                 script {
                     // Login to IBM Cloud
-                    sh 'ibmcloud login --apikey ${IBM_CLOUD_API_KEY} --region ${IBM_CLOUD_REGION}'
+                    bat 'ibmcloud login --apikey ${IBM_CLOUD_API_KEY} --region ${IBM_CLOUD_REGION}'
                     // Push the Docker image to IBM Cloud Container Registry
-                    sh 'ibmcloud cr login'
-                    sh 'docker tag ${APP_NAME}:latest us.icr.io/your_namespace/${APP_NAME}:latest'
-                    sh 'docker push us.icr.io/your_namespace/${APP_NAME}:latest'
+                    bat 'ibmcloud cr login'
+                    bat 'docker tag ${APP_NAME}:latest us.icr.io/your_namespace/${APP_NAME}:latest'
+                    bat 'docker push us.icr.io/your_namespace/${APP_NAME}:latest'
                     // Deploy to IBM Cloud (Cloud Foundry or Kubernetes)
                     // For Cloud Foundry
-                    sh 'ibmcloud cf push ${APP_NAME} --docker-image us.icr.io/your_namespace/${APP_NAME}:latest'
+                    bat 'ibmcloud cf push ${APP_NAME} --docker-image us.icr.io/your_namespace/${APP_NAME}:latest'
                     // For Kubernetes, you would use kubectl commands here
                 }
             }
