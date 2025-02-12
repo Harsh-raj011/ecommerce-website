@@ -10,6 +10,13 @@ pipeline {
 
     stages {
         stage('Checkout') {
+             steps {
+                checkout scm  // This checks out the source code
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
             steps {
                 git branch: 'main', url: "${GIT_REPO}"
             }
