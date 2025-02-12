@@ -19,8 +19,8 @@ pipeline {
             steps {
                 script {
                     // Example for a Node.js application
-                    sh 'npm install'
-                    sh 'npm run build'
+                    bat 'npm install'
+                    bat 'npm run build'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Run your tests here
-                    sh 'npm test'
+                    bat 'npm test'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     // Create a Docker image or package your application
-                    sh 'docker build -t ${APP_NAME}:latest .'
+                    bat 'docker build -t ${APP_NAME}:latest .'
                 }
             }
         }
