@@ -8,13 +8,7 @@ pipeline {
         GIT_REPO = 'https://github.com/Harsh-raj011/ecommerce-website.git' // Change to your Git repository
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: "${GIT_REPO}"
-            }
-        }
-
+  
         stage('Build') {
             steps {
                 script {
