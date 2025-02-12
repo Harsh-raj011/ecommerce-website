@@ -19,8 +19,8 @@ pipeline {
             steps {
                 script {
                     // Example for a Node.js application
-                    bat 'npm install'
-                    bat 'npm run build'
+                    bat 'yarn install'
+                    bat 'yarn run build'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Run your tests here
-                    bat 'npm test'
+                    bat 'yarn test'
                 }
             }
         }
