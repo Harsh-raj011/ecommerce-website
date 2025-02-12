@@ -9,10 +9,6 @@ pipeline {
     }
 
     stages {
-        stage('Install Dependencies') {
-            steps {
-                bat 'npm install'
-            }
         stage('Checkout') {
             steps {
                 git branch: 'main', url: "${GIT_REPO}"
